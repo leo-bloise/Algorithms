@@ -1,19 +1,14 @@
 #include <iostream>
 #include <string>
-#include "binarySearch.hpp"
+#include "algorithms/binarySearch.h"
+#include "utils/assert.hpp"
 
 using std::endl;
 using std::cout;
 
 int main(int argc, char* argv[]) { 
 	int arr[] = {1, 3, 5, 7, 9, 11, 13, 15};
-	int size = sizeof(arr) / sizeof(arr[0]);
-
-	// Helper macro for assertions
-	#define ASSERT(expr, msg) \
-		if (!(expr)) cout << "[FAIL] " << msg << endl; \
-		else cout << "[PASS] " << msg << endl;
-
+	int size = sizeof(arr) / sizeof(arr[0]);		
 	ASSERT(binarySearch(arr, 1, 0, size - 1) == true, "Test 1: Found at beginning");
 	ASSERT(binarySearch(arr, 7, 0, size - 1) == true, "Test 2: Found in middle");
 	ASSERT(binarySearch(arr, 15, 0, size - 1) == true, "Test 3: Found at end");
@@ -32,6 +27,4 @@ int main(int argc, char* argv[]) {
 
 	int emptyArray[] = {};
 	ASSERT(binarySearch(emptyArray, 1, 0, -1) == false, "Test 14: Empty array");
-
-	#undef ASSERT
 }

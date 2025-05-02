@@ -1,9 +1,9 @@
 all:
-	make binarySearch
+	make main
 clear:
-	rm binarySearch
-binarySearch: binarySearch.cpp main.cpp
-	g++ -c ./binarySearch.cpp
-	g++ main.cpp binarySearch.o -o binarySearch
-	rm *.o	
-	./binarySearch
+	rm -rf main.out
+	rm -rf ./**/*.o
+binarySearch.o: algorithms/binarySearch.cpp
+	g++ -c ./algorithms/binarySearch.cpp -o ./algorithms/binarySearch.o
+main: binarySearch.o main.cpp
+	g++ ./main.cpp ./algorithms/binarySearch.o -o main.out
