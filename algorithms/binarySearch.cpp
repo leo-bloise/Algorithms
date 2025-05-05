@@ -7,7 +7,7 @@ bool binarySearch(int* arr, int needle, int l, int r) {
 			return true;
 		}
 		if (arr[m] > needle) {
-            r = m - 1;
+		        r = m - 1;
 			continue;
 		}
 		l = m + 1;
