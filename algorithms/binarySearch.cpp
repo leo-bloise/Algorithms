@@ -1,5 +1,3 @@
-#include <iostream>
-
 bool binarySearch(int* arr, int needle, int l, int r) {
 	while (l <= r) {
 		int m = l + ((r - l) / 2);
